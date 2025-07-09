@@ -123,7 +123,7 @@ function EditorPage() {
     setOutput("Running your code...");
 
     try {
-      const response = await axios.post("http://localhost:5000/compile", {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/compile`, {
         code: codeRef.current,
         language: selectedLanguage,
       });
