@@ -5,7 +5,7 @@ const ShareLink = () => {
     const [isProtected, setIsProtected] = useState(false);
     const [copied, setCopied] = useState(false);
     const [linkUrl] = useState("https://codehouse.io/fv31gmQ0zi");
-    
+
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(linkUrl);
@@ -79,53 +79,18 @@ const ShareLink = () => {
                     50% { opacity: 1; }
                 }
                 
-                .animate-float {
-                    animation: float 4s ease-in-out infinite;
-                }
-                
-                .animate-float-slow {
-                    animation: float-slow 6s ease-in-out infinite;
-                }
-                
-                .animate-float-reverse {
-                    animation: float-reverse 5s ease-in-out infinite;
-                }
-                
-                .animate-rotate-slow {
-                    animation: rotate-slow 20s linear infinite;
-                }
-                
-                .animate-drift {
-                    animation: drift 8s ease-in-out infinite;
-                }
-                
-                .animate-sway {
-                    animation: sway 3s ease-in-out infinite;
-                }
-                
-                .animate-sway-reverse {
-                    animation: sway-reverse 3.5s ease-in-out infinite;
-                }
-                
-                .animate-breathe {
-                    animation: breathe 4s ease-in-out infinite;
-                }
-                
-                .animate-breathe-reverse {
-                    animation: breathe-reverse 4.5s ease-in-out infinite;
-                }
-                
-                .animate-shimmer {
-                    animation: shimmer 3s ease-in-out infinite;
-                }
-                
-                .animate-glow {
-                    animation: glow 3s ease-in-out infinite;
-                }
-                
-                .animate-pulse-gentle {
-                    animation: pulse-gentle 2s ease-in-out infinite;
-                }
+                .animate-float { animation: float 4s ease-in-out infinite; }
+                .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+                .animate-float-reverse { animation: float-reverse 5s ease-in-out infinite; }
+                .animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
+                .animate-drift { animation: drift 8s ease-in-out infinite; }
+                .animate-sway { animation: sway 3s ease-in-out infinite; }
+                .animate-sway-reverse { animation: sway-reverse 3.5s ease-in-out infinite; }
+                .animate-breathe { animation: breathe 4s ease-in-out infinite; }
+                .animate-breathe-reverse { animation: breathe-reverse 4.5s ease-in-out infinite; }
+                .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
+                .animate-glow { animation: glow 3s ease-in-out infinite; }
+                .animate-pulse-gentle { animation: pulse-gentle 2s ease-in-out infinite; }
                 
                 .code-editor {
                     background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
@@ -200,45 +165,148 @@ const ShareLink = () => {
                 .copy-button.copied {
                     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
                 }
+
+                /* Responsive adjustments */
+                @media (max-width: 1024px) {
+                    .feature-card {
+                        padding: 1rem;
+                    }
+                    .feature-card h4 {
+                        font-size: 1rem;
+                    }
+                    .feature-card p {
+                        font-size: 0.875rem;
+                    }
+                    .code-editor {
+                        margin-top: 2rem;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .section-padding {
+                        padding: 3rem 1rem;
+                    }
+                    h2 {
+                        font-size: 1.875rem;
+                        line-height: 2.25rem;
+                    }
+                    p.text-xl {
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                    }
+                    .feature-card {
+                        padding: 0.75rem;
+                    }
+                    .feature-card .w-12 {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                    }
+                    .feature-card .w-6 {
+                        width: 1.25rem;
+                        height: 1.25rem;
+                    }
+                    .code-header {
+                        padding: 0.75rem 1rem;
+                    }
+                    .code-content {
+                        padding: 1rem;
+                    }
+                    .share-input {
+                        padding: 0.5rem 0.75rem;
+                        font-size: 0.875rem;
+                    }
+                    .copy-button {
+                        padding: 0.5rem 1rem;
+                        font-size: 0.875rem;
+                    }
+                    .copy-button .w-4 {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                    .user-indicator {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                    .user-indicator span {
+                        font-size: 0.75rem;
+                    }
+                    .text-xs {
+                        font-size: 0.75rem;
+                    }
+                    .font-mono.text-sm {
+                        font-size: 0.75rem;
+                        line-height: 1.25rem;
+                    }
+                }
+
+                @media (max-width: 640px) {
+                    .floating-elements {
+                        display: none;
+                    }
+                    .section-padding {
+                        padding: 2rem 0.5rem;
+                    }
+                    .code-editor {
+                        margin-top: 1.5rem;
+                    }
+                    .flex.space-x-3 {
+                        flex-direction: column;
+                        gap: 0.75rem;
+                    }
+                    .share-input {
+                        width: 100%;
+                    }
+                    .copy-button {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    .grid-cols-2 {
+                        grid-template-columns: 1fr;
+                    }
+                    .w-8 {
+                        width: 1.75rem;
+                        height: 1.75rem;
+                    }
+                    .w-4 {
+                        width: 0.875rem;
+                        height: 0.875rem;
+                    }
+                }
             `}</style>
-            
-            <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-indigo-50/20 overflow-hidden">
+
+            <section className="relative section-padding py-12 sm:py-16 md:py-20 bg-gradient-to-br from-slate-50 via-white to-indigo-50/20 overflow-hidden">
                 {/* Elegant background elements */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(99,102,241,0.05),transparent_50%),radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.04),transparent_50%)]"></div>
-                
+
                 {/* Floating geometric shapes */}
-                <div className="absolute top-20 right-20 w-32 h-32 border border-slate-400 rounded-full opacity-50 animate-pulse"></div>
-                <div className="absolute bottom-32 left-16 w-24 h-24 bg-indigo-200 rounded-lg rotate-12 opacity-60 animate-float"></div>
-                <div className="absolute top-1/3 left-8 w-16 h-16 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-65 animate-float-slow"></div>
-                <div className="absolute bottom-20 right-1/4 w-20 h-20 border-2 border-emerald-400 rounded-lg -rotate-6 opacity-55 animate-float-reverse"></div>
-                <div className="absolute top-10 left-1/4 w-12 h-12 bg-amber-200 rounded-full opacity-45 animate-float-slow"></div>
-                <div className="absolute top-1/2 right-12 w-28 h-28 border border-indigo-300 rounded-lg rotate-45 opacity-40 animate-rotate-slow"></div>
-                <div className="absolute bottom-10 left-1/3 w-18 h-18 bg-gradient-to-tr from-emerald-200 to-teal-200 rounded-lg rotate-12 opacity-55 animate-float"></div>
-                <div className="absolute top-2/3 left-20 w-10 h-10 border-2 border-purple-300 rounded-full opacity-45 animate-float-reverse"></div>
-                <div className="absolute bottom-1/3 right-8 w-14 h-14 bg-slate-200 rounded-full opacity-50 animate-float-slow"></div>
-                
-                {/* Additional floating elements for variety */}
-                <div className="absolute top-16 left-16 w-2 h-2 bg-indigo-300 rounded-full opacity-40 animate-float"></div>
-                <div className="absolute bottom-20 right-20 w-3 h-3 bg-emerald-300 rounded-full opacity-45 animate-float-slow"></div>
-                <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 bg-purple-300 rounded-full opacity-50 animate-float-reverse"></div>
-                <div className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-amber-300 rounded-full opacity-40 animate-float"></div>
-                
+                <div className="floating-elements">
+                    <div className="absolute top-20 right-20 w-24 sm:w-32 h-24 sm:h-32 border border-slate-400 rounded-full opacity-50 animate-pulse"></div>
+                    <div className="absolute bottom-32 left-16 w-20 sm:w-24 h-20 sm:h-24 bg-indigo-200 rounded-lg rotate-12 opacity-60 animate-float"></div>
+                    <div className="absolute top-1/3 left-8 w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-65 animate-float-slow"></div>
+                    <div className="absolute bottom-20 right-1/4 w-16 sm:w-20 h-16 sm:h-20 border-2 border-emerald-400 rounded-lg -rotate-6 opacity-55 animate-float-reverse"></div>
+                    <div className="absolute top-10 left-1/4 w-10 sm:w-12 h-10 sm:h-12 bg-amber-200 rounded-full opacity-45 animate-float-slow"></div>
+                    <div className="absolute top-1/2 right-12 w-20 sm:w-28 h-20 sm:h-28 border border-indigo-300 rounded-lg rotate-45 opacity-40 animate-rotate-slow"></div>
+                    <div className="absolute bottom-10 left-1/3 w-14 sm:w-18 h-14 sm:h-18 bg-gradient-to-tr from-emerald-200 to-teal-200 rounded-lg rotate-12 opacity-55 animate-float"></div>
+                    <div className="absolute top-2/3 left-20 w-8 sm:w-10 h-8 sm:h-10 border-2 border-purple-300 rounded-full opacity-45 animate-float-reverse"></div>
+                    <div className="absolute bottom-1/3 right-8 w-12 sm:w-14 h-12 sm:h-14 bg-slate-200 rounded-full opacity-50 animate-float-slow"></div>
+                    <div className="absolute top-16 left-16 w-2 h-2 bg-indigo-300 rounded-full opacity-40 animate-float"></div>
+                    <div className="absolute bottom-20 right-20 w-3 h-3 bg-emerald-300 rounded-full opacity-45 animate-float-slow"></div>
+                    <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 bg-purple-300 rounded-full opacity-50 animate-float-reverse"></div>
+                    <div className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-amber-300 rounded-full opacity-40 animate-float"></div>
+                    <div className="absolute top-0 left-1/2 w-px h-24 sm:h-32 bg-gradient-to-b from-indigo-400 to-transparent opacity-35 transform -translate-x-1/2 animate-sway"></div>
+                    <div className="absolute bottom-0 right-1/3 w-px h-20 sm:h-24 bg-gradient-to-t from-emerald-400 to-transparent opacity-35 animate-sway-reverse"></div>
+                    <div className="absolute top-1/4 left-20 w-px h-16 sm:h-20 bg-gradient-to-b from-purple-400 to-transparent opacity-30 transform rotate-12 animate-sway"></div>
+                    <div className="absolute bottom-1/4 right-16 w-px h-20 sm:h-28 bg-gradient-to-t from-amber-400 to-transparent opacity-30 transform -rotate-12 animate-sway-reverse"></div>
+                    <div className="absolute top-0 left-0 w-32 sm:w-40 h-32 sm:h-40 bg-gradient-to-br from-indigo-100 to-transparent opacity-50 rounded-br-full animate-breathe"></div>
+                    <div className="absolute bottom-0 right-0 w-40 sm:w-48 h-40 sm:h-48 bg-gradient-to-tl from-emerald-100 to-transparent opacity-50 rounded-tl-full animate-breathe-reverse"></div>
+                </div>
+
                 {/* Subtle dot grid */}
                 <div className="absolute inset-0 opacity-35" style={{
                     backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
                     backgroundSize: '40px 40px'
                 }}></div>
-                
-                {/* Soft light rays */}
-                <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-indigo-400 to-transparent opacity-35 transform -translate-x-1/2 animate-sway"></div>
-                <div className="absolute bottom-0 right-1/3 w-px h-24 bg-gradient-to-t from-emerald-400 to-transparent opacity-35 animate-sway-reverse"></div>
-                <div className="absolute top-1/4 left-20 w-px h-20 bg-gradient-to-b from-purple-400 to-transparent opacity-30 transform rotate-12 animate-sway"></div>
-                <div className="absolute bottom-1/4 right-16 w-px h-28 bg-gradient-to-t from-amber-400 to-transparent opacity-30 transform -rotate-12 animate-sway-reverse"></div>
-                
-                {/* Subtle corner accents */}
-                <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-indigo-100 to-transparent opacity-50 rounded-br-full animate-breathe"></div>
-                <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-emerald-100 to-transparent opacity-50 rounded-tl-full animate-breathe-reverse"></div>
-                
+
                 {/* Elegant curved lines */}
                 <svg className="absolute top-0 left-0 w-full h-full opacity-45 animate-drift" viewBox="0 0 1000 1000" fill="none">
                     <path d="M-100 200 Q 200 100 500 200 T 1100 200" stroke="url(#gradient1)" strokeWidth="1.5" fill="none" />
@@ -268,188 +336,186 @@ const ShareLink = () => {
                         </linearGradient>
                     </defs>
                 </svg>
-                
-                <div className="relative max-w-6xl mx-auto px-6">
-                    <div className="flex flex-col lg:flex-row items-center gap-16">
+
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                         {/* Left Content */}
-                        <div className="lg:w-1/2 space-y-8">
-                            <div className="space-y-6">
-                                <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-slate-600 text-sm font-medium border border-slate-200/60">
-                                    <Link className="w-4 h-4 mr-2" />
+                        <div className="lg:w-1/2 space-y-6">
+                            <div className="space-y-4">
+                                <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-slate-600 text-sm font-medium border border-slate-200/60">
+                                    <Link className="w-4 h-4 mr-1.5 sm:mr-2" />
                                     Seamless Sharing
                                 </div>
-                                
-                                <h2 className="text-4xl md:text-5xl font-light text-slate-900 leading-tight">
-                                    Share the link to 
+
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 leading-tight">
+                                    Share the link to
                                     <span className="font-medium text-indigo-600 block">invite collaboration</span>
                                 </h2>
-                                
-                                <p className="text-xl text-slate-600 leading-relaxed">
+
+                                <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
                                     Share your code with colleagues instantly. Enable real-time collaboration with live cursors, version control, and seamless synchronization across all devices.
                                 </p>
                             </div>
-                            
+
                             {/* Feature Cards */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div className="feature-card rounded-2xl p-6">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                                        <Eye className="w-6 h-6 text-white" />
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                <div className="feature-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                                        <Eye className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                                     </div>
-                                    <h4 className="text-lg font-semibold text-slate-900 mb-2">Live Cursors</h4>
-                                    <p className="text-slate-600">See exactly where teammates are editing</p>
+                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900 mb-1 sm:mb-2">Live Cursors</h4>
+                                    <p className="text-slate-600 text-sm sm:text-base">See exactly where teammates are editing</p>
                                 </div>
-                                
-                                <div className="feature-card rounded-2xl p-6">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
-                                        <Users className="w-6 h-6 text-white" />
+
+                                <div className="feature-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                                        <Users className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                                     </div>
-                                    <h4 className="text-lg font-semibold text-slate-900 mb-2">Team Sync</h4>
-                                    <p className="text-slate-600">Real-time updates across all devices</p>
+                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900 mb-1 sm:mb-2">Team Sync</h4>
+                                    <p className="text-slate-600 text-sm sm:text-base">Real-time updates across all devices</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         {/* Right Code Editor */}
-                        <div className="lg:w-1/2">
-                            <div className="code-editor rounded-2xl overflow-hidden animate-glow">
+                        <div className="lg:w-1/2 w-full">
+                            <div className="code-editor rounded-xl sm:rounded-2xl overflow-hidden animate-glow">
                                 {/* Code Header */}
-                                <div className="code-header px-6 py-4 flex items-center justify-between">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                                            <Code2 className="w-4 h-4 text-white" />
+                                <div className="code-header px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+                                    <div className="flex items-center space-x-3 sm:space-x-4">
+                                        <div className="w-7 sm:w-8 h-7 sm:h-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                                            <Code2 className="w-4 sm:w-4 h-4 sm:h-4 text-white" />
                                         </div>
                                         <div>
-                                            <h4 className="text-white font-medium text-sm">MyApp.jsx</h4>
+                                            <h4 className="text-white font-medium text-xs sm:text-sm">MyApp.jsx</h4>
                                             <p className="text-slate-400 text-xs">React Component</p>
                                         </div>
                                     </div>
-                                    
-                                    <div className="flex items-center space-x-3">
-                                        <div className="flex items-center space-x-2">
+
+                                    <div className="flex items-center space-x-2 sm:space-x-3">
+                                        <div className="flex items-center space-x-1.5 sm:space-x-2">
                                             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse-gentle"></div>
                                             <span className="text-slate-400 text-xs">3 online</span>
                                         </div>
                                         <div className="flex -space-x-2">
-                                            <div className="user-indicator w-7 h-7 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center border-2 border-slate-700">
+                                            <div className="user-indicator w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center border-2 border-slate-700">
                                                 <span className="text-white text-xs font-medium">A</span>
                                             </div>
-                                            <div className="user-indicator w-7 h-7 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center border-2 border-slate-700">
+                                            <div className="user-indicator w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center border-2 border-slate-700">
                                                 <span className="text-white text-xs font-medium">S</span>
                                             </div>
-                                            <div className="user-indicator w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center border-2 border-slate-700">
+                                            <div className="user-indicator w-6 sm:w-7 h-6 sm:w-7 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center border-2 border-slate-700">
                                                 <span className="text-white text-xs font-medium">M</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 {/* Code Content */}
-                                <div className="code-content p-6">
-                                    <div className="font-mono text-sm text-slate-300 leading-6 space-y-0.5">
-                                        <div><span className="syntax-keyword">import</span> <span className="syntax-variable">React</span> <span className="syntax-keyword">from</span> <span className="syntax-string">'react'</span><span className="syntax-bracket">;</span></div>
-                                        <div className="h-3"></div>
-                                        <div><span className="syntax-keyword">function</span> <span className="syntax-function">MyApp</span><span className="syntax-bracket">()</span> <span className="syntax-bracket">{'{'}</span></div>
-                                        <div className="ml-4"><span className="syntax-keyword">return</span> <span className="syntax-bracket">(</span></div>
-                                        <div className="ml-8"><span className="syntax-bracket">&lt;</span><span className="syntax-variable">div</span><span className="syntax-bracket">&gt;</span></div>
-                                        <div className="ml-12"><span className="syntax-comment">{`{/* Your amazing app goes here */}`}</span></div>
-                                        <div className="ml-8"><span className="syntax-bracket">&lt;/</span><span className="syntax-variable">div</span><span className="syntax-bracket">&gt;</span></div>
-                                        <div className="ml-4"><span className="syntax-bracket">);</span></div>
-                                        <div><span className="syntax-bracket">{'}'}</span></div>
-                                    </div>
+                                <div className="code-content p-4 sm:p-6">
+                                    <div><span className="syntax-keyword">import</span> <span className="syntax-variable">React</span> <span className="syntax-keyword">from</span> <span className="syntax-string">'react'</span><span className="syntax-bracket">;</span></div>
+                                    <div className="h-3"></div>
+                                    <div><span className="syntax-keyword">function</span> <span className="syntax-function">MyApp</span><span className="syntax-bracket">()</span> <span className="syntax-bracket">{'{'}</span></div>
+                                    <div className="ml-4"><span className="syntax-keyword">return</span> <span className="syntax-bracket">(</span></div>
+                                    <div className="ml-8"><span className="syntax-bracket">&lt;</span><span className="syntax-variable">div</span><span className="syntax-bracket">&gt;</span></div>
+                                    <div className="ml-12"><span className="syntax-comment">{`{/* Your amazing app goes here */}`}</span></div>
+                                    <div className="ml-8"><span className="syntax-bracket">&lt;/</span><span className="syntax-variable">div</span><span className="syntax-bracket">&gt;</span></div>
+                                    <div className="ml-4"><span className="syntax-bracket">);</span></div>
+                                    <div><span className="syntax-bracket">{'}'}</span></div>
                                 </div>
-                                
-                                {/* Protection Toggle */}
-                                <div className="code-header px-6 py-4 border-t border-slate-600/30">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div className="flex items-center space-x-3">
-                                            <div className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${isProtected ? 'bg-indigo-600' : 'bg-slate-600'}`}>
-                                                <button
-                                                    onClick={() => setIsProtected(!isProtected)}
-                                                    className={`inline-flex h-4 w-4 transform items-center justify-center rounded-full bg-white transition-transform ${isProtected ? 'translate-x-6' : 'translate-x-1'}`}
-                                                >
-                                                    <span className="sr-only">Toggle protection</span>
-                                                </button>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <Lock className="w-4 h-4 text-slate-400" />
-                                                <span className={`text-sm font-medium ${isProtected ? 'text-indigo-400' : 'text-slate-400'}`}>
-                                                    {isProtected ? 'Protected' : 'Unprotected'}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <span className="text-xs text-slate-500">
-                                            {isProtected ? 'Read-only access' : 'Full edit access'}
-                                        </span>
-                                    </div>
-                                    
-                                    {/* Share Link Section */}
-                                    <div className="space-y-3">
-                                        <div className="flex items-center space-x-2">
-                                            <Link className="w-4 h-4 text-indigo-400" />
-                                            <span className="text-sm font-medium text-slate-300">Share with your team:</span>
-                                        </div>
-                                        
-                                        <div className="flex space-x-3">
-                                            <div className="flex-1 relative">
-                                                <input 
-                                                    type="text" 
-                                                    value={linkUrl} 
-                                                    readOnly 
-                                                    className="share-input w-full px-4 py-3 text-slate-300 rounded-xl font-mono text-sm focus:outline-none transition-all duration-300"
-                                                />
-                                                <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                                                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse-gentle"></div>
-                                                </div>
-                                            </div>
-                                            
-                                            <button 
-                                                onClick={handleCopy}
-                                                className={`copy-button px-6 py-3 rounded-xl font-medium text-white flex items-center space-x-2 ${copied ? 'copied' : ''}`}
+                            </div>
+
+                            {/* Protection Toggle */}
+                            <div className="code-header px-4 sm:px-6 py-3 sm:py-4 border-t border-slate-600/30">
+                                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                                    <div className="flex items-center space-x-2 sm:space-x-3">
+                                        <div className={`relative inline-flex h-5 sm:h-6 w-10 sm:w-11 items-center rounded-full transition-colors ${isProtected ? 'bg-indigo-600' : 'bg-slate-600'}`}>
+                                            <button
+                                                onClick={() => setIsProtected(!isProtected)}
+                                                className={`inline-flex h-3 sm:h-4 w-3 sm:w-4 transform items-center justify-center rounded-full bg-white transition-transform ${isProtected ? 'translate-x-6 sm:translate-x-6' : 'translate-x-1'}`}
                                             >
-                                                {copied ? (
-                                                    <>
-                                                        <Check className="w-4 h-4" />
-                                                        <span>Copied!</span>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <Copy className="w-4 h-4" />
-                                                        <span>Copy</span>
-                                                    </>
-                                                )}
+                                                <span className="sr-only">Toggle protection</span>
                                             </button>
                                         </div>
+                                        <div className="flex items-center space-x-1.5 sm:space-x-2">
+                                            <Lock className="w-3 sm:w-4 h-3 sm:h-4 text-slate-400" />
+                                            <span className={`text-xs sm:text-sm font-medium ${isProtected ? 'text-indigo-400' : 'text-slate-400'}`}>
+                                                {isProtected ? 'Protected' : 'Unprotected'}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span className="text-xs text-slate-500">
+                                        {isProtected ? 'Read-only access' : 'Full edit access'}
+                                    </span>
+                                </div>
+
+                                {/* Share Link Section */}
+                                <div className="space-y-3">
+                                    <div className="flex items-center space-x-1.5 sm:space-x-2">
+                                        <Link className="w-3 sm:w-4 h-3 sm:h-4 text-indigo-400" />
+                                        <span className="text-xs sm:text-sm font-medium text-slate-300">Share with your team:</span>
+                                    </div>
+
+                                    <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                                        <div className="flex-1 relative">
+                                            <input
+                                                type="text"
+                                                value={linkUrl}
+                                                readOnly
+                                                className="share-input w-full px-3 sm:px-4 py-2 sm:py-3 text-slate-300 rounded-lg sm:rounded-xl font-mono text-xs sm:text-sm focus:outline-none transition-all duration-300"
+                                            />
+                                            <div className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse-gentle"></div>
+                                            </div>
+                                        </div>
+
+                                        <button
+                                            onClick={handleCopy}
+                                            className={`copy-button px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium text-white flex items-center justify-center space-x-1.5 sm:space-x-2 ${copied ? 'copied' : ''}`}
+                                        >
+                                            {copied ? (
+                                                <>
+                                                    <Check className="w-3 sm:w-4 h-3 sm:h-4" />
+                                                    <span>Copied!</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Copy className="w-3 sm:w-4 h-3 sm:h-4" />
+                                                    <span>Copy</span>
+                                                </>
+                                            )}
+                                        </button>
                                     </div>
                                 </div>
-                                
-                                {/* Collaboration Status */}
-                                <div className="code-header px-6 py-3 border-t border-slate-600/30">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center space-x-3">
-                                            <div className="flex -space-x-2">
-                                                <div className="user-indicator w-6 h-6 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center border-2 border-slate-700">
-                                                    <span className="text-white text-xs font-medium">A</span>
-                                                </div>
-                                                <div className="user-indicator w-6 h-6 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center border-2 border-slate-700">
-                                                    <span className="text-white text-xs font-medium">S</span>
-                                                </div>
-                                                <div className="user-indicator w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center border-2 border-slate-700">
-                                                    <span className="text-white text-xs font-medium">M</span>
-                                                </div>
+                            </div>
+
+                            {/* Collaboration Status */}
+                            <div className="code-header px-4 sm:px-6 py-2 sm:py-3 border-t border-slate-600/30">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center space-x-2 sm:space-x-3">
+                                        <div className="flex -space-x-2">
+                                            <div className="user-indicator w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center border-2 border-slate-700">
+                                                <span className="text-white text-xs font-medium">A</span>
                                             </div>
-                                            <span className="text-xs text-slate-400">3 developers online</span>
+                                            <div className="user-indicator w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center border-2 border-slate-700">
+                                                <span className="text-white text-xs font-medium">S</span>
+                                            </div>
+                                            <div className="user-indicator w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center border-2 border-slate-700">
+                                                <span className="text-white text-xs font-medium">M</span>
+                                            </div>
                                         </div>
-                                        <div className="flex items-center space-x-2 text-xs text-slate-400">
-                                            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse-gentle"></div>
-                                            <span>Auto-saved</span>
-                                        </div>
+                                        <span className="text-xs text-slate-400">3 developers online</span>
+                                    </div>
+                                    <div className="flex items-center space-x-1.5 sm:space-x-2 text-xs text-slate-400">
+                                        <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse-gentle"></div>
+                                        <span>Auto-saved</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
         </>
     );
 };
