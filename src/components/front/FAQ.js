@@ -19,7 +19,7 @@ const FAQ = () => {
         },
         { 
             question: "What programming languages does it support?", 
-            answer: "Currently, it supports popular languages like HTML, CSS, JavaScript, Python, Java, C++, etc. More languages are being added based on user feedback." 
+            answer: "Currently, it supports popular languages like Python, Java, C++, SQL, R, Rust etc. More languages are being added based on user feedback." 
         },
         { 
             question: "Is my code saved automatically?", 
